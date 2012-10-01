@@ -1,0 +1,7 @@
+This directory contains libraries required for the project
+Put here the following libraries:
+- commons-dbutils-1.5.jar
+- derby-10.9.1.0.jar
+- junit-4.10.jar
+- swingx-all-1.6.4.jar
+
