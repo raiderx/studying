@@ -37,6 +37,15 @@ public class StudentDaoImplTest {
         studentDao.createTable();
     }
 
+    @AfterClass
+    public static void testTearDown() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            fail(e.getMessage());
+        }
+    }
+
     @Before
     public void setUp() {
         try {
@@ -51,15 +60,6 @@ public class StudentDaoImplTest {
     public void tearDown() {
         try {
             connection.rollback();
-        } catch (SQLException e) {
-            fail(e.getMessage());
-        }
-    }
-
-    @AfterClass
-    public static void testTearDown() {
-        try {
-            connection.close();
         } catch (SQLException e) {
             fail(e.getMessage());
         }

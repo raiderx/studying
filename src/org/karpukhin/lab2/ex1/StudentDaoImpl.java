@@ -107,7 +107,7 @@ public class StudentDaoImpl implements StudentDao {
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(GET_ALL_STUDENTS_SQL);
-            if (resultSet.next()) {
+            while (resultSet.next()) {
                 result.add(map(resultSet));
             }
         } catch (SQLException e) {
