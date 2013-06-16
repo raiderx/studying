@@ -48,14 +48,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Map map = new HashMap();
         while (scanner.hasNext()) {
-            String[] ss = scanner.nextLine().split("-");
+            String[] ss = scanner.next().split("-");
+            int v = Integer.parseInt(ss[1]);
             if (map.containsKey(ss[0])) {
                 int v1 = (Integer)map.get(ss[0]);
-                int v2 = Integer.parseInt(ss[1]);
-                if (v2 > v1)
-                    map.put(ss[0], v2);
+                if (v > v1)
+                    map.put(ss[0], v);
             } else {
-                map.put(ss[0], Integer.parseInt(ss[1]));
+                map.put(ss[0], v);
             }
         }
         Map other = new TreeMap(new Comparator() {

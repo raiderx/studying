@@ -48,18 +48,21 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void f(String h) {
-        String[] ss = h.split("-");
+    public static String f(String str) {
+        String[] ss = str.split("-");
         int y = Integer.parseInt(ss[0]);
         int m = Integer.parseInt(ss[1]);
         Calendar c = Calendar.getInstance();
         c.set(y, m, 28);
-        System.out.println(c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.ENGLISH).toUpperCase());
+        return c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.ENGLISH).toUpperCase();
     }
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        f(s.nextLine());
-        f(s.nextLine());
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String str = scanner.next();
+            System.out.println(f(str));
+        }
+        scanner.close();
     }
 }

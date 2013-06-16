@@ -35,8 +35,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[] ss = scanner.nextLine().split(",");
-        int res = f(ss[0]) - f(ss[1]);
-        System.out.println(res);
+        while (scanner.hasNext()) {
+            String[] ss = scanner.next().split(",");
+            int res = f(ss[0]) - f(ss[1]);
+            System.out.println(res);
+        }
+        scanner.close();
     }
 }

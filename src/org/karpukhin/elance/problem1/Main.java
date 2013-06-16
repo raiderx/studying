@@ -15,10 +15,11 @@ public class Main {
         return (int)(U*t+((A*t*t)/2));
     }
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        double t1 = s.nextDouble();
-        double t2 = s.nextDouble();
-        System.out.println(f(t1));
-        System.out.println(f(t2));
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextDouble()) {
+            double t = scanner.nextDouble();
+            System.out.println(f(t));
+        }
+        scanner.close();
     }
 }

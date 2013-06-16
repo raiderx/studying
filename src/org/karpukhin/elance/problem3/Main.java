@@ -8,28 +8,27 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void f(int h) {
+    public static String f(int h) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <= h; ++i) {
-            for (int j = 0; j < h-i; ++j) sb.append(' ');
+        for (int i = 1; i <= h; ++i) {
+            for (int j = 0; j < h-i; ++j)
+                sb.append(' ');
             for (int j = 0; j < i; ++j) {
                 sb.append(i);
-                if (j < i)
+                if (j < i-1)
                     sb.append(' ');
             }
-            if (i < h)
-                sb.append('\n');
+            sb.append('\n');
         }
-        System.out.print(sb.toString());
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int h1 = s.nextInt();
-        int h2 = s.nextInt();
-        int h3 = s.nextInt();
-        f(h1);
-        f(h2);
-        f(h3);
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextInt()) {
+            int t = scanner.nextInt();
+            System.out.print(f(t));
+        }
+        scanner.close();
     }
 }
